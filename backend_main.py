@@ -14,6 +14,10 @@ import json
 
 app = FastAPI(title="Society Management System API")
 
+@app.get("/")
+def home():
+    return {"message": "Society Management API is running"}
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
